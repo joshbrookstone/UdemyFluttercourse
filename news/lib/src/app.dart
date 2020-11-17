@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news/src/blocs/stories_bloc.dart';
 import "screens/news_list.dart";
 import 'blocs/stories_provider.dart';
 import 'screens/news_detail.dart';
@@ -20,6 +21,8 @@ class App extends StatelessWidget {
     if (settings.name == '/') {
       return MaterialPageRoute(
         builder: (context) {
+          final storiesBloc = StoriesProvider.of(context);
+          storiesBloc.fetchTopIds();
           return NewsList();
         },
       );
