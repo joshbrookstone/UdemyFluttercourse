@@ -1,0 +1,1 @@
+class CommentsBloc extends Object {}
