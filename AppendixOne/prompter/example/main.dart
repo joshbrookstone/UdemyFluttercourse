@@ -1,9 +1,4 @@
-// import 'package:prompter_jdb/src/terminal.dart';
-
-// import 'package:prompter_jdb/src/prompter.dart';
-
-import '../lib/src/option.dart';
-import '../lib/src/prompter.dart';
+import 'package:prompter_jdb/prompter_jdb.dart';
 
 void main() {
   final options = [
@@ -12,6 +7,10 @@ void main() {
   ];
 
   final prompter = new Prompter();
-  final userPicks = prompter.ask('What color do you like?', options);
-  print(userPicks);
+
+  String colorCode = prompter.askMultiple('Select a color', options);
+  bool answer = prompter.askBinary('Do you like this lib?');
+
+  print(colorCode);
+  print(answer);
 }
